@@ -8,7 +8,9 @@ hl.on("hyprland.start", function()
     -- Fedora: polkit authentication agent
     hl.exec_cmd("/usr/libexec/kf6/polkit-kde-authentication-agent-1")
 
-    -- Autostart apps on specific workspaces
+    -- Vesktop: normal window on workspace 4 (tray icon via its own minimizeToTray setting)
     hl.exec_cmd("[workspace 4] vesktop")
-    -- hl.exec_cmd("[workspace 5] steam")
+
+    -- Steam: start silently to the system tray (no window, tray icon available)
+    hl.exec_cmd("steam -silent")
 end)
