@@ -3,3 +3,6 @@
 -- Allow tearing (immediate) for Steam games.
 -- Requires general.allow_tearing = true to actually tear (see custom/general.lua).
 hl.window_rule({ match = { class = "^(steam_app_.*)$" }, immediate = true })
+
+-- Keep vesktop on workspace 4
+hl.window_rule({ match = { class = "vesktop" }, workspace = "4" })

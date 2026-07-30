@@ -8,8 +8,10 @@ hl.on("hyprland.start", function()
     -- Fedora: polkit authentication agent
     hl.exec_cmd("/usr/libexec/kf6/polkit-kde-authentication-agent-1")
 
-    -- Vesktop: normal window on workspace 4 (tray icon via its own minimizeToTray setting)
-    hl.exec_cmd("[workspace 4] vesktop")
+    -- Vesktop: delay a few seconds so the bar's system-tray host is up first,
+    -- otherwise vesktop's tray icon registers too early and never appears.
+    -- Workspace-4 placement is handled by a window rule in custom/rules.lua.
+    hl.exec_cmd("sleep 4 && vesktop")
 
     -- Steam: start silently to the system tray (no window, tray icon available)
     hl.exec_cmd("steam -silent")
