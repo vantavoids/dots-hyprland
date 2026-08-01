@@ -173,7 +173,9 @@ Scope {
                         buttonIcon: "downloading"
                         buttonText: Translation.tr("Hibernate")
                         onClicked: {
-                            Session.hibernate();
+                            // Hibernation is blocked on this machine (Secure Boot
+                            // lockdown + no disk swap), so fall back to suspend.
+                            Session.suspend();
                             sessionRoot.hide();
                         }
                         onFocusChanged: {
