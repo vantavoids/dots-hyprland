@@ -23,7 +23,7 @@ Singleton {
     function suspend() {
         // Lock fully before suspending (see custom/scripts/lock-and-suspend.sh);
         // suspending directly races the pre-sleep lock and resumes unlocked.
-        Quickshell.execDetached(["bash", "-c", "$HOME/.config/hypr/custom/scripts/lock-and-suspend.sh"]);
+        Quickshell.execDetached(["bash", "-c", "$HOME/.config/hypr/custom/scripts/lock-and-suspend.sh menu"]);
     }
 
     function logout() {

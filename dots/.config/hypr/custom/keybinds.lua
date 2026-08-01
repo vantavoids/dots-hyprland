@@ -4,5 +4,5 @@ hl.bind("CTRL+SUPER+ALT+Slash", hl.dsp.exec_cmd("xdg-open ~/.config/hypr/custom/
 -- straight to `systemctl suspend`, which races the pre-sleep lock and resumes
 -- onto an unlocked desktop. See custom/scripts/lock-and-suspend.sh.
 hl.unbind("SUPER + SHIFT + L")
-hl.bind("SUPER + SHIFT + L", hl.dsp.exec_cmd("$HOME/.config/hypr/custom/scripts/lock-and-suspend.sh"),
+hl.bind("SUPER + SHIFT + L", hl.dsp.exec_cmd("$HOME/.config/hypr/custom/scripts/lock-and-suspend.sh keybind"),
     { locked = true, description = "Session: Lock & sleep" })
